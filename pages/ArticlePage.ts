@@ -21,6 +21,7 @@ export class ArticlePage extends BasePage {
   async clickRandomArticle() {
     await this.randomArticleLink.click();
   }
+  // Expand sidebar main menu
   async openMainMenu() {
     await this.mainMenuButton.click();
   }

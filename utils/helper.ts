@@ -1,3 +1,4 @@
+// Checks if array of strings is sorted alphabetically (ascending)
 export function isSortedAlphabetically(arr: string[]): boolean {
   const normalize = (value: string) =>
     value
@@ -13,7 +14,7 @@ export function isSortedAlphabetically(arr: string[]): boolean {
 
   return normalized.every((value, index) => value === sorted[index]);
 }
-
+// Normalize text for comparison
 export function normalize(text: string): string {
   return text.trim().toLowerCase();
 }

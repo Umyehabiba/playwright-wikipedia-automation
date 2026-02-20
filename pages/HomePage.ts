@@ -2,11 +2,10 @@ import { Page, Locator, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
 
 export class HomePage extends BasePage {
-  heading: Locator;
-
-   englishLink: Locator;
-   searchInput: Locator;
-   searchButton: Locator;
+  readonly heading: Locator;
+  readonly englishLink: Locator;
+  readonly searchInput: Locator;
+  readonly searchButton: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -27,7 +26,7 @@ export class HomePage extends BasePage {
     await this.searchButton.click();
     await this.waitForVisible(this.heading);
   }
-
+// Combined flow helper (navigation + language + search)
   async searchArticle(term: string) {
     await this.open();
     await this.selectEnglishLanguage();
